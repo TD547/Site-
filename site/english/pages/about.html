@@ -6,15 +6,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/style_about.css">
 </head>
 <body>
-<a href="../Home.html"><img class = "logo" src="../../Logo_2.png"></a>
-	<header>
+<a href="../Index.html"><img class = "logo" src="../../Logo_2.png"></a>
 
-		<a href="../Home.html">Home</a>
-		<a href="prestation.html">Fees</a>
-		<a href="my_work.html">My Work</a>
-		<a href="contact.html">Contact Us</a>
-		<a href="../../french/pages/a_propos.html">FR</a>
-		<a href="about.html">EN</a>
+		<header>
+		<a href="../Index.html" id="home">TEXT</a>
+		<a href="my_work.html"  id="mywork">TEXT</a>
+		<a href="prestation.html" id="pricing">TEXT</a>
+		<a href="contact.html" id="contact">TEXTE</a>
+		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
+		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
+
 	</header>
 
 	<h1>About Us </h1> 
@@ -26,6 +27,67 @@
 	<h2>Legal Information</h2>
 
 	<p></p>
+<script>
+var traduction = {
+	amyWork: {
+		en:"My work",
+		fr:"Mon travail"
+	},
+	myWork: {
+		en:"My work",
+		fr:"Mon travail"
+	},
+	pricing: {
+		en:"Pricing",
+		fr:"Tarifs"
+	},
+	home: {
+		en:"Home",
+		fr:"Menu"
+	},
+	contact: {
+		en:"Contact Us",
+		fr:"Contactez nous"
+	}
+};
+	var lang = "fr";
+	var btnEn = document.getElementById('btnEn');
+	var btnFr = document.getElementById('btnFr');
+    
+	
+ function translate() {
+	 if(lang === "fr") {
+		btnFr.classList.add("activeBtn");
+		btnEn.classList.remove("activeBtn");
+	 } else {
+		btnFr.classList.remove("activeBtn");
+		btnEn.classList.add("activeBtn");
+	 }
+
+	var linkMyWork = document.getElementById('mywork');
+	linkMyWork.text = traduction.myWork[lang];
+
+	var linkMyWork = document.getElementById('mywork');
+	linkMyWork.text = traduction.myWork[lang];
+    
+	var linkPricing = document.getElementById('pricing');
+	linkPricing.text = traduction.pricing[lang];
+
+	var linkHome = document.getElementById('home');
+	linkHome.text = traduction.home[lang];
+
+	var linkContact = document.getElementById('contact');
+	linkContact.text = traduction.contact[lang];
+
+    }
+    
+function toogleLang(plang) {
+     lang = plang;
+	
+ translate();
+    }
+translate();
+</script>
 
 </body>
 </html>

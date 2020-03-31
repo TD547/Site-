@@ -91,3 +91,8 @@ header a:hover{
 	background-color: #bfbfbf;
 	border-radius: 30px;
 }
+
+.activeBtn {
+background-color: orange;
+color: white;
+}

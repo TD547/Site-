@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Link Up</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/style_mywork.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style_home.css">
 </head>
 <body>
+<header>
+	<a href="pages/contact.html" id="contact">TEXTE</a>
+	<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
+	<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
+</header>
 
-<a href="../Index.html"><img class = "logo" src="../../Logo_2.png"></a>
 
-	<header>
-		<a href="../Index.html" id="home">TEXT</a>
-		<a href="about.html" id="about">TEXT</a>
-		<a href="prestation.html" id="pricing">TEXT</a>
-		<a href="contact.html" id="contact">TEXTE</a>
-		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
-		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
 
-	</header>
+<div class="logo-row">
+	<a href="Index.html"><img src="../Logo_2.png" alt="logo" class="logo"></a>
+</div>
 
-		<h1>My Previous Works</h1>
-	
-<p>
-		Translation in french of several Court documents on behalf of an English client. 
-	</p>
-
+<div class="pages">
+	<a href="pages/about.html" id="about">TEXT</a>
+		<a href="pages/my_work.html"  id="mywork">TEXT</a>
+		<a href="pages/prestation.html" id="pricing">TEXT</a>
+</div>
 <script>
 var traduction = {
 	about: {
 		en:"About Us",
 		fr:"A propos"
 	},
-	about: {
-		en:"About Us",
-		fr:"A propos"
+	myWork: {
+		en:"My work",
+		fr:"Mon travail"
 	},
 	pricing: {
 		en:"Pricing",
@@ -42,10 +40,6 @@ var traduction = {
 	contact: {
 		en:"Contact Us",
 		fr:"Contactez nous"
-	},
-	home: {
-		en:"Home",
-		fr:"Menu"
 	}
 };
 	var lang = "fr";
@@ -65,17 +59,14 @@ var traduction = {
 	var linkAbout = document.getElementById('about');
 	linkAbout.text = traduction.about[lang];
 
-	var linkAbout = document.getElementById('about');
-	linkAbout.text = traduction.about[lang];
+	var linkMyWork = document.getElementById('mywork');
+	linkMyWork.text = traduction.myWork[lang];
     
 	var linkPricing = document.getElementById('pricing');
 	linkPricing.text = traduction.pricing[lang];
 
 	var linkContact = document.getElementById('contact');
 	linkContact.text = traduction.contact[lang];
-
-	var linkHome = document.getElementById('home');
-	linkHome.text = traduction.home[lang];
     }
     
 function toogleLang(plang) {

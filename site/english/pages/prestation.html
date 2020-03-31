@@ -7,17 +7,17 @@
 </head>
 <body>
 
-<a href="../Home.html"><img class = "logo" src="../../Logo_2.png"></a>
+<a href="../Index.html"><img class = "logo" src="../../Logo_2.png"></a>
+
 	<header>
 
-		<a href="../Home.html">Home</a>
-		<a href="my_work.html">My Work</a>
-		<a href="about.html">About Us</a>
-		<a href="contact.html">Contact Us</a>
-		<a href="../../french/pages/prestation.html">FR</a>
-		<a href="prestation.html">EN</a>
+		<a href="../Index.html" id="home">TEXT</a>
+		<a href="about.html" id="about">TEXT</a>
+		<a href="my_work.html"  id="mywork">TEXT</a>
+		<a href="contact.html" id="contact">TEXTE</a>
+		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
+		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
 	</header>
-
 
 <h1>Fees</h1>
 	
@@ -38,6 +38,115 @@
 	<p> The money you have to pay is about : x.x € OR x.x $ per minute </p>
 	<h3> Tarif 3 (under 1 hour) : </h3>
 	<p> The money you have to pay is about : x.x € OR x.x $ per minute </p>
+
+<script>
+var traduction = {
+	about: {
+		en:"About Us",
+		fr:"A propos"
+	},
+	myWork: {
+		en:"My work",
+		fr:"Mon travail"
+	},
+	home: {
+		en:"Home",
+		fr:"Menu"
+	},
+	contact: {
+		en:"Contact Us",
+		fr:"Contactez nous"
+	}
+};
+	var lang = "fr";
+	var btnEn = document.getElementById('btnEn');
+	var btnFr = document.getElementById('btnFr');
+    
+	
+ function translate() {
+	 if(lang === "fr") {
+		btnFr.classList.add("activeBtn");
+		btnEn.classList.remove("activeBtn");
+	 } else {
+		btnFr.classList.remove("activeBtn");
+		btnEn.classList.add("activeBtn");
+	 }
+
+	var linkAbout = document.getElementById('about');
+	linkAbout.text = traduction.about[lang];
+
+	var linkMyWork = document.getElementById('mywork');
+	linkMyWork.text = traduction.myWork[lang];
+    
+	var linkHome = document.getElementById('home');
+	linkHome.text = traduction.home[lang];
+
+	var linkContact = document.getElementById('contact');
+	linkContact.text = traduction.contact[lang];
+    }
+    
+function toogleLang(plang) {
+     lang = plang;
+	
+ translate();
+    }
+translate();
+</script>
+
+<script>
+var traduction = {
+	about: {
+		en:"About Us",
+		fr:"A propos"
+	},
+	myWork: {
+		en:"My work",
+		fr:"Mon travail"
+	},
+	home: {
+		en:"Home",
+		fr:"Menu"
+	},
+	contact: {
+		en:"Contact Us",
+		fr:"Contactez nous"
+	}
+};
+	var lang = "fr";
+	var btnEn = document.getElementById('btnEn');
+	var btnFr = document.getElementById('btnFr');
+    
+	
+ function translate() {
+	 if(lang === "fr") {
+		btnFr.classList.add("activeBtn");
+		btnEn.classList.remove("activeBtn");
+	 } else {
+		btnFr.classList.remove("activeBtn");
+		btnEn.classList.add("activeBtn");
+	 }
+
+	var linkAbout = document.getElementById('about');
+	linkAbout.text = traduction.about[lang];
+
+	var linkMyWork = document.getElementById('mywork');
+	linkMyWork.text = traduction.myWork[lang];
+    
+	var linkHome = document.getElementById('home');
+	linkHome.text = traduction.home[lang];
+
+	var linkContact = document.getElementById('contact');
+	linkContact.text = traduction.contact[lang];
+    }
+    
+function toogleLang(plang) {
+     lang = plang;
+	
+ translate();
+    }
+translate();
+</script>
+
 
 </body>
 </html>

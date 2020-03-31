@@ -92,3 +92,8 @@ header a{
 header a:last-child{
 	margin-right: 5%;
 }
+
+.activeBtn {
+background-color: orange;
+color: white;
+}

@@ -99,3 +99,8 @@ header a:hover{
 body{
 	margin-bottom: 10%;
 }
+
+.activeBtn {
+background-color: orange;
+color: white;
+}
