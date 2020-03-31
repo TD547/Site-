@@ -9,8 +9,8 @@
 	
 	<header>
 		<a href="pages/contact.html">Contact Us</a>
-		<a href="../french/Accueil.html">FR</a>
-		<a href="Home.html">EN</a>
+		<button type="button" onclick='toogleLang("en")'>EN</button>
+		<button type="button" onclick='toogleLang("fr")'>FR</button>
 	</header>
 
 
@@ -20,10 +20,42 @@
 	</div>
 
 	<div class="pages">
-		<a href="pages/about.html">About Us</a>
-    	<a href="pages/my_work.html">My work</a>
-    	<a href="pages/prestation.html">Fees</a>
+		<a href="pages/about.html" id="about">TEXT</a>
+    		<a href="pages/my_work.html"  id="mywork">My work</a>
+    		<a href="pages/prestation.html" id="pricing">Pricing</a>
 	</div>
-
+    <script>
+	var traduction = {
+		about: {
+			en:"About Us",
+			fr:"à propos"
+		},
+		myWork: {
+			en:"My work",
+			fr:"Mon travail"
+		},
+		pricing: {
+			en:"Pricing",
+			fr:"Tarifs"
+		}
+	};
+    	var lang = "fr";
+	    
+	 function translate() {
+    	var linkAbout = document.getElementById('about');
+    	linkAbout.text = traduction.about[lang];
+	var linkMyWork = document.getElementById('mywork');
+    	linkMyWork.text = traduction.myWork[lang];
+	    
+	var linkPricing = document.getElementById('pricing');
+    	linkPricing.text = traduction.pricing[lang];
+	    }
+	    
+	function toogleLang(plang) {
+         lang = plang;
+	 translate();
+        }
+	translate();
+    </script>
 </body>
 </html>
