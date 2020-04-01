@@ -12,7 +12,7 @@
 	<header>
 		<a href="../Index.html" id="home">TEXT</a>
 		<a href="about.html" id="about">TEXT</a>
-		<a href="prestation.html" id="pricing">TEXT</a>
+		<a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
 		<a href="contact.html" id="contact">TEXTE</a>
 		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
 		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
@@ -48,7 +48,8 @@ var traduction = {
 		fr:"Menu"
 	}
 };
-	var lang = "fr";
+	var urlParams = new URLSearchParams(window.location.search);
+  	var lang = urlParams.get('lang') || "fr";
 	var btnEn = document.getElementById('btnEn');
 	var btnFr = document.getElementById('btnFr');
     
@@ -78,10 +79,14 @@ var traduction = {
 	linkHome.text = traduction.home[lang];
     }
     
-function toogleLang(plang) {
+	function toogleLang(plang) {  
      lang = plang;
-	
- translate();
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
+    }
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
     }
 translate();
 </script>

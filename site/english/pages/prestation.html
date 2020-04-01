@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Link Up</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/style_prestation.css">
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  </head>
 <body>
 <a href="../Index.html"><img class = "logo" src="../../Logo_2.png"></a>
 
   <header>
 
     <a href="../Index.html" id="home">TEXT</a>
-    <a href="about.html" id="about">TEXT</a>
-    <a href="my_work.html"  id="mywork">TEXT</a>
+    <a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
+    <a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
     <a href="contact.html" id="contact">TEXTE</a>
     <button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
     <button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
@@ -20,9 +22,10 @@
 
 <h1>Fees</h1>
 <h2> Written prestation : </h2>
+
 <section class="ac-container">
                 <div>
-                    <input id="ac-1" name="accordion-1" type="radio" checked="">
+                    <input id="ac-1" name="accordion-1" type="radio" checked>
                     <label for="ac-1">Under X words</label>
                     <article class="ac-small">
                         <p>The money you have to pay is about : x.x € OR x.x $ per word</p>
@@ -44,24 +47,24 @@
                 </div>
             </section>
 <br>
-  <h2> Oral prestation : </h2>
+  <h2> Vocal prestation : </h2>
   <section class="ac-container">
                 <div>
-                    <input id="ac-4" name="accordion-1" type="radio" checked="">
+                    <input id="ac-4" name="accordion-2" type="radio" checked>
                     <label for="ac-4">Under X words</label>
                     <article class="ac-small">
                         <p>The money you have to pay is about : x.x € OR x.x $ per word</p>
                     </article>
                 </div>
                 <div>
-                    <input id="ac-5" name="accordion-1" type="radio">
+                    <input id="ac-5" name="accordion-2" type="radio">
                     <label for="ac-5">Under X words</label>
                     <article class="ac-medium">
                         <p>The money you have to pay is about : x.x € OR x.x $ per word</p>
                     </article>
                 </div>
                 <div>
-                    <input id="ac-6" name="accordion-1" type="radio">
+                    <input id="ac-6" name="accordion-2" type="radio">
                     <label for="ac-6">Under X words</label>
                     <article class="ac-large">
                         <p>The money you have to pay is about : x.x € OR x.x $ per word </p>
@@ -88,7 +91,9 @@ var traduction = {
     fr:"Contactez nous"
   }
 };
-  var lang = "fr";
+
+var urlParams = new URLSearchParams(window.location.search);
+  var lang = urlParams.get('lang') || "fr";
   var btnEn = document.getElementById('btnEn');
   var btnFr = document.getElementById('btnFr');
     
@@ -115,12 +120,17 @@ var traduction = {
   linkContact.text = traduction.contact[lang];
     }
     
-function toogleLang(plang) {
+    function toogleLang(plang) {  
      lang = plang;
-  
- translate();
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
     }
-translate();
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
+    }
+
+  translate();
 </script>
 
 </body>

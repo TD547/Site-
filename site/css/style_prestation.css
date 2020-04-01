@@ -1,4 +1,4 @@
-.*{font-family: Arial;}
+*{font-family: Arial;}
 
 h1{
     color: #E7A854;
@@ -160,7 +160,9 @@ ac-container {
 }
 
 .ac-container label:hover:after,.ac-container input:checked + label:hover:after {
-    content: '';
+    font-family: "Font Awesome\ 5 Free";
+      font-weight: 900;
+    content: '\f107';
     position: absolute;
     width: 24px;
     height: 24px;
