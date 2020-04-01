@@ -10,11 +10,18 @@
 <a href="#" onclick='appendParameter("../Index.html")'><img class = "logo" src="../../Logo_2.png"></a>
 
 	<header>
+<<<<<<< HEAD
 	  	<a href="#" onclick='appendParameter("../Index.html")' id="home">TEXT</a>
     	<a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
  		<a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
 		<a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
 		<a href="#" onclick='appendParameter("contact.html")'  id="contact">TEXT</a>
+=======
+		<a href="../Index.html" id="home">TEXT</a>
+		<a href="about.html" id="about">TEXT</a>
+		<a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
+		<a href="contact.html" id="contact">TEXTE</a>
+>>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
 		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
 		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
 
@@ -48,7 +55,11 @@ var traduction = {
 	}
 };
 	var urlParams = new URLSearchParams(window.location.search);
+<<<<<<< HEAD
  	var lang = urlParams.get('lang') || "fr";
+=======
+  	var lang = urlParams.get('lang') || "fr";
+>>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
 	var btnEn = document.getElementById('btnEn');
  	var btnFr = document.getElementById('btnFr');
     
