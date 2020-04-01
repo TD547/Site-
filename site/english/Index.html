@@ -7,75 +7,125 @@
 </head>
 <body>
 <header>
-	<a href="pages/contact.html" id="contact">TEXTE</a>
-	<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
-	<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
-</header>
+      <a href="#" onclick='appendParameter("Index.html")' id="home">TEXT</a>
+      <a href="#" onclick='appendParameter("pages/about.html")' id="about">TEXT</a>
+    <a href="#" onclick='appendParameter("pages/my_work.html")'  id="mywork">TEXT</a>
+    <a href="#" onclick='appendParameter("pages/prestation.html")' id="pricing">TEXT</a>
+    <a href="#" onclick='appendParameter("pages/contact.html")'  id="contact">TEXT</a>
+    <button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
+    <button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
+
+  </header>
 
 
 
 <div class="logo-row">
-	<a href="Index.html"><img src="../Logo_2.png" alt="logo" class="logo"></a>
+	<a href="#" onclick='appendParameter("Index.html")'><img src="../Logo_2.png" alt="logo" class="logo"></a>
 </div>
 
 <div class="pages">
-	<a href="pages/about.html" id="about">TEXT</a>
-		<a href="pages/my_work.html"  id="mywork">TEXT</a>
-		<a href="pages/prestation.html" id="pricing">TEXT</a>
-</div>
+	 <a href="#" onclick='appendParameter("pages/about.html")' id="about2">TEXT</a>
+    <a href="#" onclick='appendParameter("pages/my_work.html")'  id="mywork2">TEXT</a>
+ <a href="#" onclick='appendParameter("pages/prestation.html")' id="pricing2">TEXT</a>
+ </div>
+
 <script>
 var traduction = {
-	about: {
-		en:"About Us",
-		fr:"A propos"
-	},
-	myWork: {
-		en:"My work",
-		fr:"Mon travail"
-	},
-	pricing: {
-		en:"Pricing",
-		fr:"Tarifs"
-	},
-	contact: {
-		en:"Contact Us",
-		fr:"Contactez nous"
-	}
+  about: {
+    en:"About Us",
+    fr:"A propos"
+  },
+  mywork: {
+    en:"My work",
+    fr:"Mes travaux"
+  },
+  pricing: {
+    en:"Pricing",
+    fr:"Tarifs"
+  },
+   about2: {
+    en:"About Us",
+    fr:"A propos"
+  },
+  mywork2: {
+    en:"My work",
+    fr:"Mes travaux"
+  },
+  pricing2: {
+    en:"Pricing",
+    fr:"Tarifs"
+  },
+  contact: {
+    en:"Contact Us",
+    fr:"Contactez nous"
+  },
+  home: {
+    en:"Home",
+    fr:"Menu"
+  }
 };
-	var lang = "fr";
-	var btnEn = document.getElementById('btnEn');
-	var btnFr = document.getElementById('btnFr');
+  var urlParams = new URLSearchParams(window.location.search);
+  var lang = urlParams.get('lang') || "fr";
+  var btnEn = document.getElementById('btnEn');
+  var btnFr = document.getElementById('btnFr');
     
-	
+  
  function translate() {
-	 if(lang === "fr") {
-		btnFr.classList.add("activeBtn");
-		btnEn.classList.remove("activeBtn");
-	 } else {
-		btnFr.classList.remove("activeBtn");
-		btnEn.classList.add("activeBtn");
-	 }
+   if(lang === "fr") {
+    btnFr.classList.add("activeBtn");
+    btnEn.classList.remove("activeBtn");
+   } else {
+    btnFr.classList.remove("activeBtn");
+    btnEn.classList.add("activeBtn");
+   }
 
-	var linkAbout = document.getElementById('about');
-	linkAbout.text = traduction.about[lang];
+  var linkAbout = document.getElementById('about');
+  linkAbout.text = traduction.about[lang];
 
-	var linkMyWork = document.getElementById('mywork');
-	linkMyWork.text = traduction.myWork[lang];
+  var linkMyWork = document.getElementById('mywork');
+  linkMyWork.text = traduction.mywork[lang];
     
-	var linkPricing = document.getElementById('pricing');
-	linkPricing.text = traduction.pricing[lang];
+  var linkHome = document.getElementById('home');
+  linkHome.text = traduction.home[lang];
 
-	var linkContact = document.getElementById('contact');
-	linkContact.text = traduction.contact[lang];
+  var linkContact = document.getElementById('contact');
+  linkContact.text = traduction.contact[lang];
+
+  var linkPricing = document.getElementById('pricing');
+  linkPricing.text = traduction.pricing[lang];
+
+  var linkAbout2 = document.getElementById('about2');
+  linkAbout2.text = traduction.about2[lang];
+
+  var linkMyWork2 = document.getElementById('mywork2');
+  linkMyWork2.text = traduction.mywork2[lang];
+ var linkPricing2 = document.getElementById('pricing2');
+  linkPricing2.text = traduction.pricing2[lang];
     }
     
-function toogleLang(plang) {
+  function toogleLang(plang) {  
      lang = plang;
-	
- translate();
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
     }
-translate();
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
+    }
+
+    function toogleLang(plang) {  
+     lang = plang;
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
+    }
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
+    }
+
+  translate();
 </script>
+
 
 </body>
 </html>

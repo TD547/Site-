@@ -6,15 +6,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/style_contact.css">
 </head>
 <body>
-<a href="../Index.html"><img class = "logo" src="../../Logo_2.png"></a>
+<a href="#" onclick='appendParameter("../Index.html")'><img class = "logo" src="../../Logo_2.png"></a>
 	<header>
-
-		<a href="../Index.html" id="home">TEXT</a>
-		<a href="about.html" id="about">TEXT</a>
-		<a href="my_work.html"  id="mywork">TEXT</a>
-		<a href="prestation.html" id="pricing">TEXT</a>
+	  	<a href="#" onclick='appendParameter("../Index.html")' id="home">TEXT</a>
+    	<a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
+ 		<a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
+		<a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
+		<a href="#" onclick='appendParameter("contact.html")'  id="contact">TEXT</a>
 		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
 		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
+
 	</header>
 
 
@@ -29,26 +30,31 @@ var traduction = {
 		en:"About Us",
 		fr:"A propos"
 	},
-	myWork: {
+	mywork: {
 		en:"My work",
-		fr:"Mon travail"
+		fr:"Mes travaux"
 	},
 	pricing: {
 		en:"Pricing",
 		fr:"Tarifs"
 	},
+	contact: {
+		en:"Contact Us",
+		fr:"Contactez nous"
+	},
 	home: {
 		en:"Home",
 		fr:"Menu"
 	},
-	mail: {
+	mail:{
 		en:"Please, do not hesitate to contact me via e-mail at linkup@gmail.com",
-		fr:"N'hésitez pas à me contacter par e-mail : linkup@gmail.com"
+		fr:"mail"
 	}
 };
-	var lang = "fr";
+	var urlParams = new URLSearchParams(window.location.search);
+ 	var lang = urlParams.get('lang') || "fr";
 	var btnEn = document.getElementById('btnEn');
-	var btnFr = document.getElementById('btnFr');
+ 	var btnFr = document.getElementById('btnFr');
     
 	
  function translate() {
@@ -60,30 +66,48 @@ var traduction = {
 		btnEn.classList.add("activeBtn");
 	 }
 
-	var linkAbout = document.getElementById('about');
-	linkAbout.text = traduction.about[lang];
+  var linkAbout = document.getElementById('about');
+  linkAbout.text = traduction.about[lang];
 
-	var linkMyWork = document.getElementById('mywork');
-	linkMyWork.text = traduction.myWork[lang];
+  var linkMyWork = document.getElementById('mywork');
+  linkMyWork.text = traduction.mywork[lang];
     
-	var linkPricing = document.getElementById('pricing');
-	linkPricing.text = traduction.pricing[lang];
+  var linkHome = document.getElementById('home');
+  linkHome.text = traduction.home[lang];
 
-	var linkHome = document.getElementById('home');
-	linkHome.text = traduction.home[lang];
+  var linkMail = document.getElementById('mail');
+  linkMail.text = traduction.mail[lang];
 
-	var mail = document.getElementById('mail');
-	mail.text = traduction.mail[lang];
+  var linkContact = document.getElementById('contact');
+  linkContact.text = traduction.contact[lang];
 
+  var linkPricing = document.getElementById('pricing');
+  linkPricing.text = traduction.pricing[lang];
     }
     
-function toogleLang(plang) {
+	function toogleLang(plang) {  
      lang = plang;
-	
- translate();
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
     }
-translate();
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
+    }
+
+    function toogleLang(plang) {  
+     lang = plang;
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
+    }
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
+    }
+
+  translate();
 </script>
+
 
 </body>
 </html>

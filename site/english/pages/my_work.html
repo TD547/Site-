@@ -7,13 +7,14 @@
 </head>
 <body>
 
-<a href="../Index.html"><img class = "logo" src="../../Logo_2.png"></a>
+<a href="#" onclick='appendParameter("../Index.html")'><img class = "logo" src="../../Logo_2.png"></a>
 
 	<header>
-		<a href="../Index.html" id="home">TEXT</a>
-		<a href="about.html" id="about">TEXT</a>
-		<a href="prestation.html" id="pricing">TEXT</a>
-		<a href="contact.html" id="contact">TEXTE</a>
+	  	<a href="#" onclick='appendParameter("../Index.html")' id="home">TEXT</a>
+    	<a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
+ 		<a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
+		<a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
+		<a href="#" onclick='appendParameter("contact.html")'  id="contact">TEXT</a>
 		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
 		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
 
@@ -21,9 +22,7 @@
 
 		<h1>My Previous Works</h1>
 	
-<p>
-		Translation in french of several Court documents on behalf of an English client. 
-	</p>
+	<p>Translation in french of several Court documents on behalf of an English client. </p>
 
 <script>
 var traduction = {
@@ -31,9 +30,9 @@ var traduction = {
 		en:"About Us",
 		fr:"A propos"
 	},
-	about: {
-		en:"About Us",
-		fr:"A propos"
+	mywork: {
+		en:"My work",
+		fr:"Mes travaux"
 	},
 	pricing: {
 		en:"Pricing",
@@ -48,9 +47,10 @@ var traduction = {
 		fr:"Menu"
 	}
 };
-	var lang = "fr";
+	var urlParams = new URLSearchParams(window.location.search);
+ 	var lang = urlParams.get('lang') || "fr";
 	var btnEn = document.getElementById('btnEn');
-	var btnFr = document.getElementById('btnFr');
+ 	var btnFr = document.getElementById('btnFr');
     
 	
  function translate() {
@@ -62,28 +62,43 @@ var traduction = {
 		btnEn.classList.add("activeBtn");
 	 }
 
-	var linkAbout = document.getElementById('about');
-	linkAbout.text = traduction.about[lang];
+  var linkAbout = document.getElementById('about');
+  linkAbout.text = traduction.about[lang];
 
-	var linkAbout = document.getElementById('about');
-	linkAbout.text = traduction.about[lang];
+  var linkMyWork = document.getElementById('mywork');
+  linkMyWork.text = traduction.mywork[lang];
     
-	var linkPricing = document.getElementById('pricing');
-	linkPricing.text = traduction.pricing[lang];
+  var linkHome = document.getElementById('home');
+  linkHome.text = traduction.home[lang];
 
-	var linkContact = document.getElementById('contact');
-	linkContact.text = traduction.contact[lang];
+  var linkContact = document.getElementById('contact');
+  linkContact.text = traduction.contact[lang];
 
-	var linkHome = document.getElementById('home');
-	linkHome.text = traduction.home[lang];
+  var linkPricing = document.getElementById('pricing');
+  linkPricing.text = traduction.pricing[lang];
     }
     
-function toogleLang(plang) {
+	function toogleLang(plang) {  
      lang = plang;
-	
- translate();
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
     }
-translate();
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
+    }
+
+    function toogleLang(plang) {  
+     lang = plang;
+
+      urlParams.set('lang', lang);
+      window.location.search = urlParams;
+    }
+    function appendParameter(link) {  
+      window.location = link+"?lang="+lang ;
+    }
+
+  translate();
 </script>
 
 </body>
