@@ -26,47 +26,42 @@
 
 <script>
 var traduction = {
-	about: {
-		en:"About Us",
-		fr:"A propos"
-	},
-	mywork: {
-		en:"My work",
-		fr:"Mes travaux"
-	},
-	pricing: {
-		en:"Pricing",
-		fr:"Tarifs"
-	},
-	contact: {
-		en:"Contact Us",
-		fr:"Contactez nous"
-	},
-	home: {
-		en:"Home",
-		fr:"Menu"
-	},
-	mail:{
-		en:"Please, do not hesitate to contact me via e-mail at linkup@gmail.com",
-		fr:"mail"
-	}
+  about: {
+    en:"About Us",
+    fr:"A propos"
+  },
+  mywork: {
+    en:"My work",
+    fr:"Mes travaux"
+  },
+  pricing: {
+    en:"Pricing",
+    fr:"Tarifs"
+  },
+  contact: {
+    en:"Contact Us",
+    fr:"Contactez nous"
+  },
+  home: {
+    en:"Home",
+    fr:"Menu"
+  }
 };
-	var urlParams = new URLSearchParams(window.location.search);
- 	var lang = urlParams.get('lang') || "fr";
-	var btnEn = document.getElementById('btnEn');
- 	var btnFr = document.getElementById('btnFr');
+  var urlParams = new URLSearchParams(window.location.search);
+  var lang = urlParams.get('lang') || "fr";
+  var btnEn = document.getElementById('btnEn');
+  var btnFr = document.getElementById('btnFr');
     
-	
+  
  function translate() {
-	 if(lang === "fr") {
-		btnFr.classList.add("activeBtn");
-		btnEn.classList.remove("activeBtn");
-	 } else {
-		btnFr.classList.remove("activeBtn");
-		btnEn.classList.add("activeBtn");
-	 }
+   if(lang === "fr") {
+    btnFr.classList.add("activeBtn");
+    btnEn.classList.remove("activeBtn");
+   } else {
+    btnFr.classList.remove("activeBtn");
+    btnEn.classList.add("activeBtn");
+   }
 
-<<<<<<< HEAD
   var linkAbout = document.getElementById('about');
   linkAbout.text = traduction.about[lang];
 
@@ -76,33 +71,14 @@ var traduction = {
   var linkHome = document.getElementById('home');
   linkHome.text = traduction.home[lang];
 
-  var linkMail = document.getElementById('mail');
-  linkMail.text = traduction.mail[lang];
-
   var linkContact = document.getElementById('contact');
   linkContact.text = traduction.contact[lang];
-=======
-	var linkAbout = document.getElementById('about');
-	linkAbout.innerHTML = traduction.about[lang];
-
-	var linkMyWork = document.getElementById('mywork');
-	linkMyWork.innerHTML = traduction.myWork[lang];
-    
-	var linkPricing = document.getElementById('pricing');
-	linkPricing.innerHTML = traduction.pricing[lang];
-
-	var linkHome = document.getElementById('home');
-	linkHome.innerHTML = traduction.home[lang];
-
-	var mail = document.getElementById('mail');
-	mail.innerHTML = traduction.mail[lang];
->>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
 
   var linkPricing = document.getElementById('pricing');
   linkPricing.text = traduction.pricing[lang];
     }
     
-	function toogleLang(plang) {  
+  function toogleLang(plang) {  
      lang = plang;
 
       urlParams.set('lang', lang);

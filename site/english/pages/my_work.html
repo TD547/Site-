@@ -10,21 +10,13 @@
 <a href="#" onclick='appendParameter("../Index.html")'><img class = "logo" src="../../Logo_2.png"></a>
 
 	<header>
-<<<<<<< HEAD
 	  	<a href="#" onclick='appendParameter("../Index.html")' id="home">TEXT</a>
     	<a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
  		<a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
 		<a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
 		<a href="#" onclick='appendParameter("contact.html")'  id="contact">TEXT</a>
-=======
-		<a href="../Index.html" id="home">TEXT</a>
-		<a href="about.html" id="about">TEXT</a>
-		<a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
-		<a href="contact.html" id="contact">TEXTE</a>
->>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
 		<button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
 		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
-
 	</header>
 
 		<h1>My Previous Works</h1>
@@ -33,45 +25,41 @@
 
 <script>
 var traduction = {
-	about: {
-		en:"About Us",
-		fr:"A propos"
-	},
-	mywork: {
-		en:"My work",
-		fr:"Mes travaux"
-	},
-	pricing: {
-		en:"Pricing",
-		fr:"Tarifs"
-	},
-	contact: {
-		en:"Contact Us",
-		fr:"Contactez nous"
-	},
-	home: {
-		en:"Home",
-		fr:"Menu"
-	}
+  about: {
+    en:"About Us",
+    fr:"A propos"
+  },
+  mywork: {
+    en:"My work",
+    fr:"Mes travaux"
+  },
+  pricing: {
+    en:"Pricing",
+    fr:"Tarifs"
+  },
+  contact: {
+    en:"Contact Us",
+    fr:"Contactez nous"
+  },
+  home: {
+    en:"Home",
+    fr:"Menu"
+  }
 };
-	var urlParams = new URLSearchParams(window.location.search);
-<<<<<<< HEAD
- 	var lang = urlParams.get('lang') || "fr";
-=======
-  	var lang = urlParams.get('lang') || "fr";
->>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
-	var btnEn = document.getElementById('btnEn');
- 	var btnFr = document.getElementById('btnFr');
+  var urlParams = new URLSearchParams(window.location.search);
+  var lang = urlParams.get('lang') || "fr";
+  var btnEn = document.getElementById('btnEn');
+  var btnFr = document.getElementById('btnFr');
     
-	
+  
  function translate() {
-	 if(lang === "fr") {
-		btnFr.classList.add("activeBtn");
-		btnEn.classList.remove("activeBtn");
-	 } else {
-		btnFr.classList.remove("activeBtn");
-		btnEn.classList.add("activeBtn");
-	 }
+   if(lang === "fr") {
+    btnFr.classList.add("activeBtn");
+    btnEn.classList.remove("activeBtn");
+   } else {
+    btnFr.classList.remove("activeBtn");
+    btnEn.classList.add("activeBtn");
+   }
 
   var linkAbout = document.getElementById('about');
   linkAbout.text = traduction.about[lang];
@@ -89,7 +77,7 @@ var traduction = {
   linkPricing.text = traduction.pricing[lang];
     }
     
-	function toogleLang(plang) {  
+  function toogleLang(plang) {  
      lang = plang;
 
       urlParams.set('lang', lang);

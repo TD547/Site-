@@ -10,21 +10,13 @@
 <body>
 <a href="#" onclick='appendParameter("../Index.html")'><img class = "logo" src="../../Logo_2.png"></a>
 
-<<<<<<< HEAD
- <header>
+
+  <header>
       <a href="#" onclick='appendParameter("../Index.html")' id="home">TEXT</a>
       <a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
     <a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
     <a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
     <a href="#" onclick='appendParameter("contact.html")'  id="contact">TEXT</a>
-=======
-  <header>
-
-    <a href="../Index.html" id="home">TEXT</a>
-    <a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
-    <a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
-    <a href="contact.html" id="contact">TEXTE</a>
->>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
     <button type="button" onclick='toogleLang("en")' id="btnEn">EN</button>
     <button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
 
@@ -105,12 +97,7 @@ var traduction = {
     fr:"Menu"
   }
 };
-<<<<<<< HEAD
   var urlParams = new URLSearchParams(window.location.search);
-=======
-
-var urlParams = new URLSearchParams(window.location.search);
->>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
   var lang = urlParams.get('lang') || "fr";
   var btnEn = document.getElementById('btnEn');
   var btnFr = document.getElementById('btnFr');
@@ -141,16 +128,11 @@ var urlParams = new URLSearchParams(window.location.search);
   linkPricing.text = traduction.pricing[lang];
     }
     
-<<<<<<< HEAD
   function toogleLang(plang) {  
-=======
-    function toogleLang(plang) {  
->>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
      lang = plang;
 
       urlParams.set('lang', lang);
       window.location.search = urlParams;
-<<<<<<< HEAD
     }
     function appendParameter(link) {  
       window.location = link+"?lang="+lang ;
@@ -165,15 +147,11 @@ var urlParams = new URLSearchParams(window.location.search);
     function appendParameter(link) {  
       window.location = link+"?lang="+lang ;
     }
-=======
-    }
-    function appendParameter(link) {  
-      window.location = link+"?lang="+lang ;
-    }
->>>>>>> d6279563c2f47c60946f3fd3fdfed8d59010f576
 
   translate();
 </script>
+
+
 
 
 </body>
