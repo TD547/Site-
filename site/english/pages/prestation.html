@@ -28,23 +28,23 @@
 <section class="ac-container">
                 <div>
                     <input id="ac-1" name="accordion-1" type="radio" checked>
-                    <label for="ac-1">Under X words</label>
+                    <label for="ac-1" id="under1">Under X words</label>
                     <article class="ac-small">
-                        <p>The money you have to pay is about : x.x € OR x.x $ per word</p>
+                        <p id="p1">The money you have to pay is about : x.x € OR x.x $ per word</p>
                     </article>
                 </div>
                 <div>
                     <input id="ac-2" name="accordion-1" type="radio">
-                    <label for="ac-2">Under X words</label>
+                    <label for="ac-2" id="under2">Under X words</label>
                     <article class="ac-medium">
-                        <p>The money you have to pay is about : x.x € OR x.x $ per word</p>
+                        <p id="p2">The money you have to pay is about : x.x € OR x.x $ per word</p>
                     </article>
                 </div>
                 <div>
                     <input id="ac-3" name="accordion-1" type="radio">
-                    <label for="ac-3">Under X words</label>
+                    <label for="ac-3" id="under3">Under X words</label>
                     <article class="ac-large">
-                        <p>The money you have to pay is about : x.x € OR x.x $ per word </p>
+                        <p id="p3">The money you have to pay is about : x.x € OR x.x $ per word </p>
                     </article>
                 </div>
             </section>
@@ -53,23 +53,23 @@
   <section class="ac-container">
                 <div>
                     <input id="ac-4" name="accordion-2" type="radio" checked>
-                    <label for="ac-4">Under X words</label>
+                    <label for="ac-4" id="under4">Under X words</label>
                     <article class="ac-small">
-                        <p>The money you have to pay is about : x.x € OR x.x $ per word</p>
+                        <p id="p4">The money you have to pay is about : x.x € OR x.x $ per word</p>
                     </article>
                 </div>
                 <div>
                     <input id="ac-5" name="accordion-2" type="radio">
-                    <label for="ac-5">Under X words</label>
+                    <label for="ac-5" id="under5">Under X words</label>
                     <article class="ac-medium">
-                        <p>The money you have to pay is about : x.x € OR x.x $ per word</p>
+                        <p id="p5">The money you have to pay is about : x.x € OR x.x $ per word</p>
                     </article>
                 </div>
                 <div>
                     <input id="ac-6" name="accordion-2" type="radio">
-                    <label for="ac-6">Under X words</label>
+                    <label for="ac-6" id="under6">Under X words</label>
                     <article class="ac-large">
-                        <p>The money you have to pay is about : x.x € OR x.x $ per word </p>
+                        <p id="p6">The money you have to pay is about : x.x € OR x.x $ per word </p>
                     </article>
                 </div>
             </section>
@@ -95,6 +95,54 @@ var traduction = {
   home: {
     en:"Home",
     fr:"Menu"
+  },
+  under1: {
+    en:"Under X words",
+    fr:"en fr"
+  },
+  under2: {
+    en:"Under X words",
+    fr:"en fr"
+  },
+  under3: {
+    en:"Under X words",
+    fr:"en fr"
+  },
+  under4: {
+    en:"Under X words",
+    fr:"en fr"
+  },
+  under5: {
+    en:"Under X words",
+    fr:"en fr"
+  },
+  under6: {
+    en:"Under X words",
+    fr:"en fr"
+  },
+  p1: {
+    en:"The money you have to pay is about : x.x € OR x.x $ per word",
+    fr:"en fr"
+  },
+  p2: {
+    en:"The money you have to pay is about : x.x € OR x.x $ per word",
+    fr:"en fr"
+  },
+  p3: {
+    en:"The money you have to pay is about : x.x € OR x.x $ per word",
+    fr:"en fr"
+  },
+  p4: {
+    en:"The money you have to pay is about : x.x € OR x.x $ per word",
+    fr:"en fr"
+  },
+  p5: {
+    en:"The money you have to pay is about : x.x € OR x.x $ per word",
+    fr:"en fr"
+  },
+  p6: {
+    en:"The money you have to pay is about : x.x € OR x.x $ per word",
+    fr:"en fr"
   }
 };
   var urlParams = new URLSearchParams(window.location.search);
@@ -112,20 +160,57 @@ var traduction = {
     btnEn.classList.add("activeBtn");
    }
 
-  var linkAbout = document.getElementById('about');
-  linkAbout.text = traduction.about[lang];
-
+   var linkAbout = document.getElementById('about');
+  linkAbout.innerHTML = traduction.about[lang];
+  
   var linkMyWork = document.getElementById('mywork');
-  linkMyWork.text = traduction.mywork[lang];
+  linkMyWork.innerHTML = traduction.mywork[lang];
     
   var linkHome = document.getElementById('home');
-  linkHome.text = traduction.home[lang];
+  linkHome.innerHTML = traduction.home[lang];
 
   var linkContact = document.getElementById('contact');
-  linkContact.text = traduction.contact[lang];
+  linkContact.innerHTML = traduction.contact[lang];
 
   var linkPricing = document.getElementById('pricing');
-  linkPricing.text = traduction.pricing[lang];
+  linkPricing.innerHTML = traduction.pricing[lang];
+
+  var under1 = document.getElementById('under1');
+  under1.innerHTML = traduction.under1[lang];
+
+  var under2 = document.getElementById('under2');
+  under2.innerHTML = traduction.under2[lang];
+
+  var under3 = document.getElementById('under3');
+  under3.innerHTML = traduction.under3[lang];
+
+  var under4 = document.getElementById('under4');
+  under4.innerHTML = traduction.under4[lang];
+
+  var under5 = document.getElementById('under5');
+  under5.innerHTML = traduction.under5[lang];
+
+  var under6 = document.getElementById('under6');
+  under6.innerHTML = traduction.under6[lang];
+
+  var p1 = document.getElementById('p1');
+  p1.innerHTML = traduction.p1[lang];
+
+  var p2 = document.getElementById('p2');
+  p2.innerHTML = traduction.p2[lang];
+
+  var p3 = document.getElementById('p3');
+  p3.innerHTML = traduction.p3[lang];
+
+  var p4 = document.getElementById('p4');
+  p4.innerHTML = traduction.p4[lang];
+
+  var p5 = document.getElementById('p5');
+  p5.innerHTML = traduction.p5[lang];
+
+  var p6 = document.getElementById('p6');
+  p6.innerHTML = traduction.p6[lang];
+
     }
     
   function toogleLang(plang) {  

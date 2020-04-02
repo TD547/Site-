@@ -21,7 +21,7 @@
 
 		<h1>My Previous Works</h1>
 	
-	<p>Translation in french of several Court documents on behalf of an English client. </p>
+	<p id="p1">Translation in french of several Court documents on behalf of an English client. </p>
 
 <script>
 var traduction = {
@@ -44,6 +44,10 @@ var traduction = {
   home: {
     en:"Home",
     fr:"Menu"
+  },
+  p1: {
+    en:"Translation in french of several Court documents on behalf of an English client.",
+    fr:"trad en fr"
   }
 };
   var urlParams = new URLSearchParams(window.location.search);
@@ -61,20 +65,24 @@ var traduction = {
     btnEn.classList.add("activeBtn");
    }
 
-  var linkAbout = document.getElementById('about');
-  linkAbout.text = traduction.about[lang];
-
+    var linkAbout = document.getElementById('about');
+  linkAbout.innerHTML = traduction.about[lang];
+  
   var linkMyWork = document.getElementById('mywork');
-  linkMyWork.text = traduction.mywork[lang];
+  linkMyWork.innerHTML = traduction.mywork[lang];
     
   var linkHome = document.getElementById('home');
-  linkHome.text = traduction.home[lang];
+  linkHome.innerHTML = traduction.home[lang];
 
   var linkContact = document.getElementById('contact');
-  linkContact.text = traduction.contact[lang];
+  linkContact.innerHTML = traduction.contact[lang];
 
   var linkPricing = document.getElementById('pricing');
-  linkPricing.text = traduction.pricing[lang];
+  linkPricing.innerHTML = traduction.pricing[lang];
+
+  var p1 = document.getElementById('p1');
+  p1.innerHTML = traduction.p1[lang];
+
     }
     
   function toogleLang(plang) {  

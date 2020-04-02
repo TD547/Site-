@@ -45,7 +45,15 @@ var traduction = {
   home: {
     en:"Home",
     fr:"Menu"
+  },mail: {
+    en:"contact mail en",
+    fr:"contacte mail fr"
+  },
+  phone: {
+    en:"tel en",
+    fr:"tel fr"
   }
+
 };
   var urlParams = new URLSearchParams(window.location.search);
   var lang = urlParams.get('lang') || "fr";
@@ -62,20 +70,26 @@ var traduction = {
     btnEn.classList.add("activeBtn");
    }
 
-  var linkAbout = document.getElementById('about');
-  linkAbout.text = traduction.about[lang];
-
+   var linkAbout = document.getElementById('about');
+  linkAbout.innerHTML = traduction.about[lang];
+  
   var linkMyWork = document.getElementById('mywork');
-  linkMyWork.text = traduction.mywork[lang];
+  linkMyWork.innerHTML = traduction.mywork[lang];
     
   var linkHome = document.getElementById('home');
-  linkHome.text = traduction.home[lang];
+  linkHome.innerHTML = traduction.home[lang];
 
   var linkContact = document.getElementById('contact');
-  linkContact.text = traduction.contact[lang];
+  linkContact.innerHTML = traduction.contact[lang];
 
   var linkPricing = document.getElementById('pricing');
-  linkPricing.text = traduction.pricing[lang];
+  linkPricing.innerHTML = traduction.pricing[lang];
+
+  var mail = document.getElementById('mail');
+  mail.innerHTML = traduction.mail[lang];
+
+  var phone = document.getElementById('phone');
+  phone.innerHTML = traduction.phone[lang];
     }
     
   function toogleLang(plang) {  
