@@ -20,9 +20,9 @@
 
 
 		<h1>Contact</h1>
-<br /><br />
+<br /><br /><br />
 <div id="whole" style="justify-content: center; display: grid; grid-template-columns: 48% 4% 48%;">
-  <form name="monformulaire"method="post" action="mail.php" style="padding-left: 7%">
+  <form name="monformulaire"  method="post" style="grid-column: 1; padding-left: 10%;" method="post" action="mail.php">
     <br /><br /><br />
       <input type="text" name="name" placeholder="nom" style="width: 70%;"><br />
       <input type="mail" name="mail" placeholder="e-mail"style="width: 70%;">
@@ -36,11 +36,26 @@
       <input type="submit" name="envoyer" value="envoyer">
   </form>
 
+  <?php if(isset($_POST['message'])){
+        $entete  = 'MIME-Version: 1.0' . "\r\n";
+        $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+        $entete .= 'From: ' . $_POST['email'] . "\r\n";
+
+        $message = '<h1>Message envoyé depuis la page Contact de monsite.fr</h1>
+        <p><b>Nom : </b>' . $_POST['nom'] . '<br>
+        <b>Email : </b>' . $_POST['email'] . '<br>
+        <b>Message : </b>' . $_POST['message'] . '</p>';
+
+        $retour = mail('destinataire@free.fr', 'Envoi depuis page Contact', $message, $entete);
+        if($retour) {
+            echo '<p>Votre message a bien été envoyé.</p>';
+        }
+    }?>
+
   <div style="grid-column: 2;"></div>
   
   <div style="grid-column: 3;">
-  	<br /><br />
-      <img src="../../work.jpg" value="Une image de ma mere en train de travailler." style="width: 100%; padding-left: 5%; max-height: 500px; max-width: 350px">
+      <img src="D:\timot\Pictures/Annotation 2020-03-27 195742.png" value="Une image de ma mere en train de travailler." style="width: 93%; padding-left: 4%;">
   </div>  
 </div>
 </div>

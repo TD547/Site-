@@ -19,35 +19,39 @@
 		<button type="button" onclick='toogleLang("fr")' id="btnFr">FR</button>
 	</header>
 
-		<h1>My Previous Works</h1>
+		<h1 id="t1">My Previous Works</h1>
 	
 	<p id="p1">Translation in french of several Court documents on behalf of an English client. </p>
 
 <script>
 var traduction = {
   about: {
-    en:"About Us",
-    fr:"A propos"
+    en:"About Me",
+    fr:"Qui suis-je"
   },
   mywork: {
     en:"My work",
     fr:"Mes travaux"
   },
   pricing: {
-    en:"Pricing",
+    en:"Rates",
     fr:"Tarifs"
   },
   contact: {
-    en:"Contact Us",
-    fr:"Contactez nous"
+    en:"Contact",
+    fr:"Contact"
   },
   home: {
     en:"Home",
-    fr:"Menu"
+    fr:"Accueil"
   },
   p1: {
     en:"Translation in french of several Court documents on behalf of an English client.",
     fr:"trad en fr"
+  },
+  t1: {
+    en:"My Previous Works",
+    fr:"Mes travaux précédent"
   }
 };
   var urlParams = new URLSearchParams(window.location.search);
@@ -82,6 +86,9 @@ var traduction = {
 
   var p1 = document.getElementById('p1');
   p1.innerHTML = traduction.p1[lang];
+
+  var t1 = document.getElementById('t1');
+  t1.innerHTML = traduction.t1[lang];
 
     }
     

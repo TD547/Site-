@@ -12,8 +12,8 @@
 
 
   <header>
-      <a href="#" onclick='appendParameter("../Index.html")' id="home">TEXT</a>
-      <a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
+    <a href="#" onclick='appendParameter("../Index.html")' id="home">TEXT</a>
+    <a href="#" onclick='appendParameter("about.html")' id="about">TEXT</a>
     <a href="#" onclick='appendParameter("my_work.html")'  id="mywork">TEXT</a>
     <a href="#" onclick='appendParameter("prestation.html")' id="pricing">TEXT</a>
     <a href="#" onclick='appendParameter("contact.html")'  id="contact">TEXT</a>
@@ -22,8 +22,10 @@
 
   </header>
 
-<h1>Fees</h1>
-<h2> Written prestation : </h2>
+<h1 id="t1">Fees</h1>
+<h2> </h2>
+
+<h2 id="t2"> Written prestation : </h2>
 
 <section class="ac-container">
                 <div>
@@ -49,10 +51,10 @@
                 </div>
             </section>
 <br>
-  <h2> Vocal prestation : </h2>
+  <h2 id="t3"> Vocal prestation : </h2>
   <section class="ac-container">
                 <div>
-                    <input id="ac-4" name="accordion-2" type="radio" checked>
+                    <input id="ac-4" name="accordion-2" type="radio">
                     <label for="ac-4" id="under4">Under X words</label>
                     <article class="ac-small">
                         <p id="p4">The money you have to pay is about : x.x € OR x.x $ per word</p>
@@ -77,7 +79,7 @@
 <script>
 var traduction = {
   about: {
-    en:"About Us",
+    en:"About Me",
     fr:"A propos"
   },
   mywork: {
@@ -85,64 +87,76 @@ var traduction = {
     fr:"Mes travaux"
   },
   pricing: {
-    en:"Pricing",
+    en:"Rates",
     fr:"Tarifs"
   },
   contact: {
-    en:"Contact Us",
-    fr:"Contactez nous"
+    en:"Contact",
+    fr:"Contact"
   },
   home: {
     en:"Home",
-    fr:"Menu"
+    fr:"Accueil"
   },
   under1: {
-    en:"Under X words",
-    fr:"en fr"
+    en:"Under 1000 words",
+    fr:"En dessous de 1000 mots"
   },
   under2: {
-    en:"Under X words",
-    fr:"en fr"
+    en:"Over 10000 words",
+    fr:"Au dela de 10000 mots"
   },
   under3: {
-    en:"Under X words",
-    fr:"en fr"
+    en:"Over 100000 words",
+    fr:"Au dela de 100000 mots"
   },
   under4: {
-    en:"Under X words",
-    fr:"en fr"
+    en:"Per hour",
+    fr:"Par heure"
   },
   under5: {
-    en:"Under X words",
-    fr:"en fr"
+    en:"For Half a day",
+    fr:"Pour une demi-journée"
   },
   under6: {
-    en:"Under X words",
-    fr:"en fr"
+    en:"For a day",
+    fr:"Par jours"
   },
   p1: {
-    en:"The money you have to pay is about : x.x € OR x.x $ per word",
-    fr:"en fr"
+    en:"The Price is of 0.015€ per word",
+    fr:"le coût est de 0.015€ par mot"
   },
   p2: {
-    en:"The money you have to pay is about : x.x € OR x.x $ per word",
-    fr:"en fr"
+    en:"The Price is 0.011€ per word",
+    fr:"Le côut est de 0.011€ par mot"
   },
   p3: {
-    en:"The money you have to pay is about : x.x € OR x.x $ per word",
-    fr:"en fr"
+    en:"The Price is 0.09€ per word",
+    fr:"Le cout est de 0.09€ par mot"
   },
   p4: {
-    en:"The money you have to pay is about : x.x € OR x.x $ per word",
-    fr:"en fr"
+    en:"The Price is 30€ per hour",
+    fr:"Le cout est de 30€ de l'heure"
   },
   p5: {
-    en:"The money you have to pay is about : x.x € OR x.x $ per word",
-    fr:"en fr"
+    en:"The Price is 25€ per hour",
+    fr:"Le cout est de 25€ de l'heure"
   },
   p6: {
-    en:"The money you have to pay is about : x.x € OR x.x $ per word",
-    fr:"en fr"
+    en:"The Price is 20€ per hour",
+    fr:"Le cout est de 20€ de l'heure"
+  },
+  t1: {
+    en:"Fees :",
+    fr:"Tarifs :"
+  },
+  t2: {
+    en:"Written prestation :",
+    fr:"Prestations écrites :"
+  },
+  t3: {
+    en:"Prestation vocal  :",
+    fr:"Préstations vocal :"
   }
 };
   var urlParams = new URLSearchParams(window.location.search);
@@ -210,6 +224,12 @@ var traduction = {
 
   var p6 = document.getElementById('p6');
   p6.innerHTML = traduction.p6[lang];
+
+  var t1 = document.getElementById('t1');
+  t1.innerHTML = traduction.t1[lang];
+
+  var t2 = document.getElementById('t2');
+  t2.innerHTML = traduction.t2[lang];
 
     }
     
